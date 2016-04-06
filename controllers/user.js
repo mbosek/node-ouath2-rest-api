@@ -13,15 +13,15 @@ exports.postUsers = function(req, res) {
         res.json({ message: 'New beer drinker added to the locker room!' });
     });
 };
-// get user @TODO: get user
-exports.getUser = function (req, res) {
-    User.find({userId: req.user._id, _id: req.params.beer_id}, function (err, user) {
-        if (err)
-            res.send(err);
+// // get user @TODO: get user
+// exports.getUser = function (req, res) {
+//     User.find({userId: req.user._id, _id: req.params.beer_id}, function (err, user) {
+//         if (err)
+//             res.send(err);
 
-        res.json(user);
-    });
-};
+//         res.json(user);
+//     });
+// };
 
 exports.getUsers = function(req, res) {
     User.find(function(err, users) {

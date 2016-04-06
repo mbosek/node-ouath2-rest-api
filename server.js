@@ -46,10 +46,15 @@ router.route('/clients')
 router.route('/users')
     .post(userController.postUsers)
     .get(authController.isAuthenticated, userController.getUsers);
+    
+router.route('/users')
+  .post(userController.postUsers)
+  .get(userController.getUsers);
 
 router.route('/beers')
     .post(authController.isAuthenticated, beerController.postBeers)
     .get(authController.isAuthenticated, beerController.getBeers)
+
 
 router.route('/beers/:beer_id')
     .get(authController.isAuthenticated, beerController.getBeer)
